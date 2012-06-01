@@ -1,138 +1,71 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+	<head>
+		<meta charset="UTF-8">
+		<title>(za)Mith Spin</title>
+		<embed src="sound.mp3" width="0" height="0" loop="1" >
+		<style type="text/css">
+			body {
+				background-color: black;
+				font-family: Helvetica, Arial, sans-serif;
+				color:			white;
+			}
+			div#title {
+				font-size: 20pt;
+				position: 		relative;
+				z-index: 25;
+			}
+			#spinner {
+				margin: auto;
+				-webkit-animation-name: spinnerRotate;
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				z-index: 24;
+			
+			}
 
-  <title>Heroku Static</title>
+			#timer {
+				position: 		relative;
+				font-weight: 	bold;
+				font-size:   	30pt;
+				z-index: 		25;
+			}
+			
+			#main {
+				margin: auto;
+				width:700px;
+				text-align: center;
+			}
+			
+			@-webkit-keyframes spinnerRotate {
+				from {
+					-webkit-transform:rotate(0deg);
+				}
+				to {
+					-webkit-transform:rotate(360deg);
+				}
+			}
+		</style>
+    	<script type="text/javascript">
+			var sec = 0;
+			var min = 0;
+			function stopwatch() {
+				sec++;
+				document.getElementById("timer").innerHTML = sec;
+				start = setTimeout("stopwatch()", 1000);
+			}
+    	</script>
 
-  <meta name="description" content="Now you can serve your static sites through Heroku. Doesn't that sound awesome?">
-  <meta name="author" content="Zach Williams, @zachwill">
-  <meta name="viewport" content="width=980">
-
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet/less" href="css/main.less">
-
-  <!-- Rather use `less.js` to dynamically compile your `stylesheet/less` files? -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.1.3/less-1.1.3.min.js"></script>
-  <script>window.less || document.write('<script src="js/libs/less-1.1.3.min.js">\x3C/script>')</script>
-
-  <!-- Need Modernizr? Uncomment the following script. -->
-  <!-- <script src="js/libs/modernizr-2.0.6.js"></script> -->
-
-</head>
-
-<body>
-  <div id="main" role="main">
-    <div class="container">
-      <div class="row">
-
-        <div class="span7 info">
-          <h1>Heroku Static</h1>
-
-          <p>Serve your static sites straight from Heroku. That's right &mdash;
-          no more nonsense. Simply <code>git push heroku</code> and watch as your site
-          immediately deploys.</p>
-
-          <p>If you've never worked with Heroku before, you will need to
-          download both the <a href="http://devcenter.heroku.com/articles/heroku-command">Heroku CLI</a>
-          and <a href="http://git-scm.com/">Git</a>. The <a href="http://devcenter.heroku.com/">Heroku Devcenter</a>,
-          in general, will be something you will use quite often.</p>
-
-          <p>If you're ready to get started, go ahead and clone <a
-            href="https://github.com/zachwill/heroku_static">this repo on
-            Github</a> and read the simple instructions in the
-          <code>README</code> file.</p>
-
-          <p><strong>NOTE</strong>: This project was directly inspired by
-          <a href="http://kennethreitz.com/static-sites-on-heroku-cedar.html">Kenneth
-            Reitz's blog post</a> and <a
-            href="https://github.com/craigkerstiens/heroku-buildpack-static">Craig
-            Kerstiens' static buildpack</a>.</p>
-        </div>
-
-        <div class="span9 meme"></div>
-      </div>
-
-      <div class="row">
-        <div class="span7">
-          <h2 class="title">Questions &amp; Answers</h2>
-        </div>
-      </div>
-
-      <div class="row questions">
-        <div class="span7">
-          <h3>But couldn't I just use Sinatra?</h3>
-          <p>Absolutely. I love <a href="http://www.sinatrarb.com/">Sinatra</a>.
-          However, I know of several people who love designing websites and
-          know how to use Git, but dislike having to use a framework when
-          building a simple site.</p>
-        </div>
-
-        <div class="span7 offset1">
-          <h3>Okay, but how much does Heroku cost?</h3>
-          <p>For the most part, <a href="http://www.heroku.com/pricing">Heroku's free</a>.
-          I say "for the most part" because you might need to use a database,
-          at which point you might have to pay some money each month.</p>
-
-          <p>Otherwise, welcome to the promised land of awesome web hosting.</p>
-        </div>
-      </div>
-
-      <div class="row questions">
-        <div class="span7">
-          <h3>I need to use a custom domain, though.</h3>
-          <p>Great. Heroku supports that <a href="http://devcenter.heroku.com/articles/custom-domains">for free</a>.</p>
-        </div>
-
-        <div class="span7 offset1">
-          <h3>Do you have any other cool projects?</h3>
-          <p>Thanks for asking &mdash; and yes, I do. Almost all of my projects are
-          <a href="https://github.com/zachwill">on Github</a>. Also, here's a
-          link to both my <a href="http://zachwill.com">personal site</a> and
-          <a href="https://twitter.com/zachwill">Twitter account</a>.
-          </p>
-        </div>
-      </div>
-
-      <div class="row questions">
-        <div class="span7">
-          <h3>Alright, I'm ready to get started.</h3>
-          <p>Awesome. Go checkout <a href="https://github.com/zachwill/heroku_static">the repo on Github</a>.</p>
-        </div>
-
-        <div class="span7 offset1">
-          <a href="http://www.heroku.com" class="logo">Heroku</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js">\x3C/script>')</script>
-
-
-  <!-- Additional JavaScript libraries and plugins... -->
-  <script src="js/libs/bootstrap-dropdown.js"></script>
-
-
-  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    var _gaq=[['_setAccount','UA-11117730-14'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
-
-
-  <!-- Prompt IE 6-7 users to install Chrome Frame. -->
-  <!--[if lte IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-</body>
+	</head>
+	<body onload="stopwatch()">
+		<div id="main">
+			<div id="title"><h1>(za)Mith Spin</h1></div>
+			<a href="http://www.groupbuddies.com">
+				<img id="spinner" src="img2.jpg">
+			</a>
+  			<div id="timer"></div>
+		</div>
+	</body>
 </html>
