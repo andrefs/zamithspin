@@ -4,7 +4,6 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>(za)Mith Spin</title>
-		<embed src="sound.mp3" width="0" height="0" loop="1" >
 		<style type="text/css">
 			body {
 				background-color: black;
@@ -60,6 +59,13 @@
 
 	</head>
 	<body onload="stopwatch()">
+<object width="0" height="0" >
+<param name="autostart" value="true">
+<param name="src" value="sound.mp3">
+<param name="autoplay" value="true"> 
+<param name="controller" value="true">
+<embed src="sound.mp3" controller="false" autoplay="true" autostart="True" type="audio/mp3" />
+</object>
 		<div id="main">
 			<div id="title"><h1>(za)Mith Spin</h1></div>
 			<a href="http://www.groupbuddies.com">
