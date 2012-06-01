@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>(za)Mith Spin</title>
+		<embed src="files/sound.mp3" width="0" height="0" >
+		<style type="text/css">
+			body {
+				background-color: black;
+				font-family: Helvetica, Arial, sans-serif;
+				color:			white;
+			}
+			div#title {
+				font-size: 20pt;
+				position: 		relative;
+				z-index: 25;
+			}
+			#spinner {
+				margin: auto;
+				-webkit-animation-name: spinnerRotate;
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				z-index: 24;
+			
+			}
+
+			#timer {
+				position: 		relative;
+				font-weight: 	bold;
+				font-size:   	30pt;
+				z-index: 		25;
+			}
+			
+			#main {
+				margin: auto;
+				width:700px;
+				text-align: center;
+			}
+			
+			@-webkit-keyframes spinnerRotate {
+				from {
+					-webkit-transform:rotate(0deg);
+				}
+				to {
+					-webkit-transform:rotate(360deg);
+				}
+			}
+		</style>
+    	<script type="text/javascript">
+			var sec = 0;
+			var min = 0;
+			function stopwatch() {
+				sec++;
+				document.getElementById("timer").innerHTML = sec;
+				start = setTimeout("stopwatch()", 1000);
+			}
+    	</script>
+
+	</head>
+	<body onload="stopwatch()">
+		<div id="main">
+			<div id="title"><h1>(za)Mith Spin</h1></div>
+			<a href="http://www.groupbuddies.com">
+				<img id="spinner" src="files/img2.jpg">
+			</a>
+  			<div id="timer"></div>
+		</div>
+	</body>
+</html>
