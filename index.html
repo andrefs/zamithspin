@@ -22,17 +22,28 @@
 				z-index: 25;
 			}
 			a {
-				color: #eee;
+				color: #fff;
 				font-weight: bold;
 				text-decoration: none;
 			}
 			#spinner {
 				margin: auto;
+				z-index: 24;
+
 				-webkit-animation-name: spinnerRotate;
 				-webkit-animation-duration: 1s;
 				-webkit-animation-iteration-count: infinite;
 				-webkit-animation-timing-function: linear;
-				z-index: 24;
+
+				-moz-animation-name: spinnerRotate;
+				-moz-animation-duration: 1s;
+				-moz-animation-iteration-count: infinite;
+				-moz-animation-timing-function: linear;
+			
+				-ms-animation-name: spinnerRotate;
+				-ms-animation-duration: 1s;
+				-ms-animation-iteration-count: infinite;
+				-ms-animation-timing-function: linear;
 			
 			}
 
@@ -48,7 +59,28 @@
 				width:400px;
 				text-align: center;
 			}
-			
+
+
+
+			@-moz-keyframes spinnerRotate {
+				from {
+					-moz-transform:rotate(0deg);
+				}
+				to {
+					-moz-transform:rotate(360deg);
+				}
+
+			}
+			@-ms-keyframes spinnerRotate {
+				from {
+					-ms-transform:rotate(0deg);
+				}
+				to {
+					-ms-transform:rotate(360deg);
+				}
+
+			}			
+
 			@-webkit-keyframes spinnerRotate {
 				from {
 					-webkit-transform:rotate(0deg);
